@@ -953,6 +953,62 @@ class IntegratedSelfReasoningChatbot:
                 return 'yes'
             return None
 
+        # ──────── 9. أمراض نعم/لا (ضغط، سكري، قلب، مزمنة، سمنة، سكري حمل) ────────
+        if field_name in ('hypertension', 'diabetes', 'cardiovascular_disease',
+                           'chronic_diseases', 'obesity', 'gestational_diabetes'):
+            # نفي / طبيعي / سليم → لا
+            if (is_no or is_normal or 'لا يوجد' in text_lower
+                    or 'ما عندي' in text_lower or 'negative' in text_lower
+                    or 'none' in text_lower):
+                return 'no'
+            # نعم / مرتفع / عالي / مصاب → نعم
+            if (is_yes or 'مرتفع' in text_lower or 'عالي' in text_lower
+                    or 'مصاب' in text_lower or 'عندي' in text_lower
+                    or 'positive' in text_lower or 'high' in text_lower):
+                return 'yes'
+            # ذكر اسم المرض نفسه = نعم (مثل "ضغط"، "سكري")
+            if self._field_keyword_present(field_name, text):
+                return 'yes'
+            return None
+
+        # ──────── 10. HbA1c (السكر التراكمي) ────────
+        if field_name == 'hba1c':
+            v = self._first_float(text, 3.0, 20.0)
+            if v is not None:
+                return v
+            if is_normal:
+                return 5.4
+            if 'مرتفع' in text_lower or 'عالي' in text_lower or 'high' in text_lower:
+                return 7.5
+            return None
+
+        # ──────── 11. الكوليسترول ────────
+        if field_name == 'cholesterol':
+            v = self._first_int(text, 80, 500)
+            if v is not None:
+                return v
+            if is_normal:
+                return 190
+            if 'مرتفع' in text_lower or 'عالي' in text_lower or 'high' in text_lower:
+                return 250
+            return None
+
+        # ──────── 12. مؤشر كتلة الجسم ────────
+        if field_name == 'bmi':
+            v = self._first_float(text, 10.0, 80.0)
+            if v is not None:
+                return v
+            return None
+
+        # ──────── 13. سنوات التدخين / سنوات الإقلاع ────────
+        if field_name in ('years_smoked', 'years_since_quit'):
+            v = self._first_int(text, 0, 90)
+            if v is not None:
+                return v
+            if is_no or is_normal:
+                return 0
+            return None
+
         return None
 
     def _normalize_value(self, field_name: str, value):
