@@ -14,6 +14,11 @@ def _risk3(level: str) -> str:
     return {"CRITICAL": "High", "HIGH": "High", "MODERATE": "Medium", "LOW": "Low"}.get(level, "Low")
 
 
+# مستوى الخطر (3 فئات) -> رمز العرض + الاسم العربي
+_RISK3_UP = {"High": "HIGH", "Medium": "MEDIUM", "Low": "LOW"}
+_RISK_AR = {"HIGH": "عالي", "MEDIUM": "متوسط", "LOW": "منخفض"}
+
+
 class DomainPipeline:
     def assess(self, facts: dict) -> dict:
         ml = heart_model.predict(facts)
@@ -38,9 +43,22 @@ class DomainPipeline:
             })
         triggered.sort(key=lambda r: r["weight"], reverse=True)
 
+        risk3 = _risk3(level)
+        risk3_up = _RISK3_UP.get(risk3, "LOW")
+        factor_labels = [RISK_LABELS.get(f, f) for f in present]
+
         return {
             "status": "complete",
             "derived_features": derived,
+            # هيكل insights الذي يتوقّعه عرض "القسم الأول: تحليل القواعد الطبية"
+            "insights": {
+                "risk_level": risk3_up,
+                "risk_level_ar": _RISK_AR.get(risk3_up, "منخفض"),
+                "triggered_rules_count": len(triggered),
+                "risk_factors": factor_labels,
+                "risk_factors_ar": factor_labels,
+                "framingham_score": 0,
+            },
             "rules": {"triggered": triggered, "risk_level": _risk3(level), "score": prob},
             "ml": {
                 "probability": prob,
