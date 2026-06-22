@@ -1405,30 +1405,28 @@ def _render_step_by_step_demo(final_assessment: dict, lang: str):
         total_features = adv.get('total_features', 26)
         st.metric(t('demo_s2_count_label', lang), total_features)
         summary = adv.get('summary', {}) or {}
-        if summary:
+        _derived = summary.get('derived_features', {}) or {}
+        if _derived:
             st.markdown(f"**{t('demo_s2_examples_label', lang)}**")
-            # Human-readable Arabic labels for the curated summary keys.
-            label_map_ar = {
-                'age_category':      'فئة العمر',
-                'cholesterol_level': 'مستوى الكوليسترول',
-                'bp_stage':          'مرحلة ضغط الدم',
-                'exercise_capacity': 'القدرة على الجهد',
-                'framingham_score':  'مؤشّر فرامنغهام',
-                'framingham_risk':   'تصنيف خطر فرامنغهام',
-                'st_depression':     'انخفاض ST',
-            }
-            label_map_en = {
-                'age_category':      'Age category',
-                'cholesterol_level': 'Cholesterol level',
-                'bp_stage':          'Blood-pressure stage',
-                'exercise_capacity': 'Exercise capacity',
-                'framingham_score':  'Framingham score',
-                'framingham_risk':   'Framingham risk',
-                'st_depression':     'ST depression',
-            }
-            labels = label_map_ar if lang == 'ar' else label_map_en
-
-            rows = [[labels.get(k, k), str(v)] for k, v in summary.items()]
+            # Curated clinical features actually consumed by the model.
+            _show_keys = [
+                ('age',              'العمر' if lang == 'ar' else 'Age'),
+                ('bmi',              'مؤشر كتلة الجسم' if lang == 'ar' else 'BMI'),
+                ('cholesterol',      'الكوليسترول' if lang == 'ar' else 'Cholesterol'),
+                ('hba1c',            'السكر التراكمي' if lang == 'ar' else 'HbA1c'),
+                ('smoking_status',   'حالة التدخين' if lang == 'ar' else 'Smoking status'),
+                ('risk_probability', 'احتمالية الخطر' if lang == 'ar' else 'Risk probability'),
+            ]
+            rows = []
+            for k, lbl in _show_keys:
+                if k in _derived and _derived[k] not in (None, ''):
+                    v = _derived[k]
+                    if k == 'risk_probability':
+                        try:
+                            v = f"{float(v)*100:.1f}%"
+                        except (TypeError, ValueError):
+                            pass
+                    rows.append([lbl, str(v)])
             st.html(_demo_html_table(
                 rows,
                 headers=[
@@ -2379,19 +2377,26 @@ def render_main_area():
                         features_summary = adv_features.get('summary', {})
                     
                         if features_summary:
+                            _derived = features_summary.get('derived_features', {}) or {}
+                            _active = features_summary.get('active', []) or []
                             col1, col2 = st.columns(2)
-                        
+
                             with col1:
                                 st.markdown(f"**{t('classification', lang)}**")
-                                st.markdown(f"• **{t('age', lang)}:** {features_summary.get('age_category', 'N/A')}")
-                                st.markdown(f"• **{t('cholesterol', lang)}:** {features_summary.get('cholesterol_level', 'N/A')}")
-                                st.markdown(f"• **{t('blood_pressure', lang)}:** {features_summary.get('bp_stage', 'N/A')}")
+                                st.markdown(f"• **{t('age', lang)}:** {_derived.get('age', 'N/A')}")
+                                st.markdown(f"• **{t('cholesterol', lang)}:** {_derived.get('cholesterol', 'N/A')}")
+                                st.markdown(f"• **BMI:** {_derived.get('bmi', 'N/A')}")
 
                             with col2:
-                                st.markdown(f"**{t('physical_capacity', lang)}**")
-                                st.markdown(f"• **{t('capacity', lang)}:** {features_summary.get('exercise_capacity', 'N/A')}")
-                                st.markdown(f"• **Framingham:** {features_summary.get('framingham_score', 'N/A')}")
-                                st.markdown(f"• **ST Depression:** {features_summary.get('st_depression', 'N/A')}")
+                                _ind_label = 'المؤشرات السريرية' if lang == 'ar' else 'Clinical indicators'
+                                st.markdown(f"**{_ind_label}**")
+                                st.markdown(f"• **HbA1c:** {_derived.get('hba1c', 'N/A')}")
+                                _rp = _derived.get('risk_probability')
+                                _rp_txt = f"{float(_rp)*100:.1f}%" if _rp is not None else 'N/A'
+                                _risk_label = 'احتمالية الخطر' if lang == 'ar' else 'Risk probability'
+                                st.markdown(f"• **{_risk_label}:** {_rp_txt}")
+                                _act_label = 'عوامل خطر فعّالة' if lang == 'ar' else 'Active risk factors'
+                                st.markdown(f"• **{_act_label}:** {len(_active)}")
 
                             st.info(f"**{t('total_features', lang)}** {adv_features.get('total_features', 0)} feature")
                     
