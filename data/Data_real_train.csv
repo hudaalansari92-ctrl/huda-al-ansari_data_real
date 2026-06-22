@@ -1,0 +1,241 @@
+severity,age,gender,height_cm,weight_kg,bmi,smoking_status,years_smoked,years_since_quit,workplace_type,environmental_hazards,family_history,ThalassemiaStatus,hypertension,diabetes,cardiovascular_disease,chronic_diseases,hba1c,cholesterol,obesity,gestational_diabetes
+critical,74.0,male,,75.0,25.95,unknown,,,office,stress,"father: chronic renal failure, high blood pressure | mother: chronic renal failure",abnormal,0,1,0,0,10.0,231,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,0,0,4.5,248,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension | mother: diabetes,normal,1,0,0,0,5.0,122,0,0
+unknown,58.0,,165.0,70.0,25.71,non-smoker,,,office,,mother: thyroid | parents: hypertension,normal,1,0,0,0,5.7,180,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,0,0,1,5.7,190,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,0,0,1,0,5.3,217,0,0
+critical,62.0,female,160.0,65.0,25.4,non-smoker,,,office,stress,"father: chronic renal failure | mother: died of a stroke, diabetes",abnormal,1,0,1,1,5.6,222,0,0
+moderate,38.0,male,182.0,76.0,22.9,non-smoker,,,office,stress,"father: chronic renal failure | mother: chronic renal failure, diabetes",abnormal,1,0,0,1,5.3,258,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,1,0,1,8.3,317,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,0,1,0,5.3,219,0,0
+severe,54.0,,175.0,92.0,30.0,non-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,1,0,5.6,232,1,0
+critical,72.0,male,,78.0,27.6,non-smoker,,,office,,father: diabetes | parents: high blood pressure,abnormal,0,0,1,0,5.5,268,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,office,chemicals,,abnormal,1,1,1,1,7.1,247,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,1,1,1,7.9,190,0,0
+severe,52.0,male,175.0,75.0,24.5,non-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,1,0,0,0,5.3,216,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,0,0,0,5.9,252,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,0,0,0,5.9,160,0,0
+critical,49.0,male,178.0,80.0,25.2,ex-smoker,,,office,stress,"father: chronic renal failure, diabetes | mother: chronic renal failure",abnormal,1,0,1,0,4.9,183,0,0
+critical,50.0,female,,65.0,25.4,non-smoker,,,factory,noise,,abnormal,1,0,1,0,6.1,192,0,0
+critical,62.0,female,165.0,65.0,23.9,non-smoker,,,factory,dust,,abnormal,0,0,0,1,5.0,255,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,1,0,0,0,6.4,180,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,0,0,5.6,207,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,office,chemicals,,abnormal,0,1,1,1,6.7,248,0,0
+moderate,,male,178.0,82.0,25.9,non-smoker,,,office,,"father: obesity | mother: thyroid, obesity",abnormal,0,1,1,1,8.9,276,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,0,1,1,0,9.0,247,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,1,1,1,9.1,255,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,factory,noise,,abnormal,0,1,1,0,10.3,239,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,0,0,1,5.9,222,0,0
+critical,65.0,male,180.0,100.0,30.9,ex-smoker,40.0,5.0,factory,dust,,normal,0,0,0,0,5.7,180,1,0
+critical,34.0,male,182.0,90.0,27.2,current smoker,,,factory,shift work,,normal,0,1,0,0,7.8,174,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,0,1,1,1,6.1,263,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,0,0,0,5.2,303,0,0
+critical,72.0,male,160.0,60.0,23.4,ex-smoker,,,factory,noise,,abnormal,1,0,1,1,6.0,302,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,0,0,0,5.5,285,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,1,0,6.2,157,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,0,0,1,0,5.7,196,0,0
+critical,32.0,female,165.0,60.0,22.0,non-smoker,,,office,noise,,abnormal,0,0,1,0,5.6,228,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,0,0,0,0,4.4,235,0,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,0,1,1,5.4,210,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,1,1,0,8.3,270,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,1,1,7.1,170,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,0,0,0,0,5.5,171,0,0
+severe,54.0,male,175.0,92.0,30.0,non-smoker,,,office,,father: high blood pressure | mother: diabetes,abnormal,1,0,1,1,5.6,278,1,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,0,0,1,5.4,291,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,0,1,7.1,256,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,0,1,0,0,7.6,172,0,0
+moderate,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,0,1,1,1,8.3,160,0,0
+severe,58.0,male,,75.0,26.0,ex-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,4.9,184,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,1,1,0,0,6.0,288,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,1,0,5.1,192,0,0
+critical,72.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension,normal,0,0,1,0,4.9,225,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,1,0,0,0,5.4,213,0,0
+moderate,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,0,5.3,242,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,0,0,1,0,5.3,251,0,0
+critical,72.0,male,175.0,85.0,27.8,ex-smoker,,,office,,,abnormal,1,0,1,0,5.9,215,0,0
+moderate,45.0,male,178.0,82.0,25.9,non-smoker,,,office,,father: hypertension | mother: thyroid,normal,0,0,0,0,5.7,193,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,0,1,1,1,8.3,207,0,1
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,0,0,5.7,234,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,0,1,0,1,7.8,208,0,0
+critical,78.0,male,170.0,65.0,22.5,non-smoker,,,factory,noise,,abnormal,1,0,1,1,5.4,260,0,0
+critical,49.0,male,178.0,80.0,25.2,ex-smoker,,,office,stress,"father: chronic renal failure, diabetes | mother: chronic renal failure",abnormal,1,1,1,0,6.1,226,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,1,1,10.0,228,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,0,1,7.9,237,0,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,0,1,1,0,8.1,198,0,0
+critical,50.0,female,,65.0,25.4,non-smoker,,,factory,noise,,abnormal,1,1,1,0,8.4,220,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,0,1,1,4.7,251,0,0
+critical,36.0,female,160.0,68.0,26.6,non-smoker,,,factory,shift work,,abnormal,1,1,1,0,6.6,261,0,0
+moderate,45.0,male,178.0,82.0,25.9,non-smoker,,,office,,father: hypertension | mother: thyroid,normal,1,0,0,0,6.0,185,0,0
+moderate,45.0,male,178.0,82.0,25.9,non-smoker,,,office,,father: hypertension | mother: thyroid,normal,0,0,0,0,5.3,197,0,0
+severe,54.0,male,175.0,92.0,30.0,non-smoker,,,office,,father: high blood pressure | mother: diabetes,abnormal,0,0,1,0,5.6,230,1,0
+moderate,45.0,male,178.0,82.0,25.9,non-smoker,,,office,,father: hypertension | mother: thyroid,normal,1,1,1,0,9.8,206,0,0
+critical,48.0,female,160.0,65.0,25.4,non-smoker,,,office,noise,,abnormal,1,0,0,1,6.1,230,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,1,1,0,8.4,277,0,0
+moderate,45.0,male,178.0,82.0,25.9,non-smoker,,,office,,father: hypertension | mother: thyroid,normal,0,0,0,0,5.9,146,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,0,5.3,240,0,0
+critical,58.0,male,172.0,82.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,0,0,1,1,5.8,293,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,1,0,0,7.4,188,0,0
+critical,75.0,male,165.0,70.0,25.7,ex-smoker,40.0,,office,pollution,,abnormal,1,0,1,1,6.4,143,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,1,0,0,0,4.8,193,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,1,0,5.7,244,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,1,1,7.1,277,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,0,1,1,1,6.7,292,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,0,0,5.6,195,0,0
+critical,72.0,,170.0,78.0,27.0,ex-smoker,,15.0,factory,,father: high blood pressure | mother: diabetes,normal,1,0,0,0,5.0,190,0,0
+severe,54.0,,175.0,92.0,30.0,non-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,1,0,6.0,311,1,0
+severe,54.0,,175.0,92.0,30.0,non-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,0,0,6.1,210,1,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,1,0,0,5.5,224,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,0,1,0,5.3,176,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,0,1,1,5.3,234,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,1,0,1,8.6,234,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,0,1,0,1,9.4,256,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,1,0,0,6.3,185,0,0
+critical,62.0,male,180.0,90.0,27.8,ex-smoker,,,factory,shift work,,abnormal,0,1,1,1,8.6,287,0,0
+critical,36.0,female,165.0,60.0,22.0,non-smoker,,,factory,noise,,normal,0,0,0,1,5.5,213,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,1,0,1,0,5.2,244,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,0,0,5.0,205,0,0
+critical,36.0,female,165.0,60.0,22.0,non-smoker,,,factory,noise,,normal,0,1,0,1,6.5,193,0,0
+severe,72.0,male,170.0,85.0,29.4,non-smoker,,,factory,stress,mother: hypertension | brother: diabetes,abnormal,0,1,1,1,8.6,219,0,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,0,1,0,1,6.5,240,0,1
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,1,1,0,10.3,263,0,0
+critical,74.0,male,,75.0,25.95,unknown,,,office,stress,"father: chronic renal failure, high blood pressure | mother: chronic renal failure",abnormal,1,1,0,0,7.6,236,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,0,1,1,0,7.1,201,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,1,1,1,1,9.6,214,0,0
+critical,36.0,female,160.0,68.0,26.6,non-smoker,,,factory,shift work,,abnormal,1,0,1,1,5.2,212,0,0
+critical,58.0,male,172.0,82.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,0,1,1,6.1,263,0,0
+critical,74.0,male,,75.0,25.95,unknown,,,office,stress,"father: chronic renal failure, high blood pressure | mother: chronic renal failure",abnormal,1,1,1,1,9.5,236,0,0
+critical,72.0,,170.0,78.0,27.0,ex-smoker,,15.0,factory,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.8,205,0,0
+critical,36.0,female,160.0,68.0,26.6,non-smoker,,,factory,shift work,,abnormal,1,1,1,1,9.2,263,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,1,0,0,1,5.1,251,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,0,1,0,5.5,272,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,1,1,5.3,307,0,0
+critical,72.0,male,160.0,60.0,23.4,ex-smoker,,,factory,noise,,abnormal,0,1,1,0,7.1,254,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,,abnormal,1,1,1,0,8.4,237,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,1,0,0,1,5.5,216,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,1,5.9,239,0,0
+moderate,58.0,,170.0,75.0,26.0,ex-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.6,208,0,0
+moderate,58.0,male,178.0,82.0,25.9,ex-smoker,,,office,,father: hypertension | mother: thyroid,abnormal,1,1,0,0,6.0,210,0,0
+moderate,58.0,,170.0,75.0,26.0,ex-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,1,0,0,0,5.9,214,0,0
+critical,72.0,male,160.0,60.0,23.4,ex-smoker,,,factory,noise,,abnormal,1,1,1,0,7.2,265,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,1,1,0,7.0,219,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,0,1,1,4.9,269,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,1,1,4.3,241,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,0,0,1,5.1,228,0,0
+moderate,46.0,,182.0,88.0,26.6,non-smoker,,,office,stress,father: chronic renal failure | parents: hypertension,abnormal,1,1,1,0,9.2,194,0,0
+critical,54.0,male,182.0,88.0,,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,0,0,1,5.5,252,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: high blood pressure | mother: diabetes,abnormal,0,1,1,0,7.9,252,0,0
+unknown,58.0,,162.0,74.0,28.2,non-smoker,,,office,,father: chronic renal failure | mother: thyroid,normal,1,0,0,0,5.6,181,0,0
+critical,72.0,male,160.0,60.0,23.4,ex-smoker,,,factory,noise,,abnormal,1,1,0,0,8.5,256,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,0,0,5.1,198,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,0,0,0,1,6.2,205,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,1,1,0,1,6.5,267,0,0
+critical,50.0,female,,65.0,25.4,non-smoker,,,factory,noise,,abnormal,1,0,1,1,4.6,214,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,1,1,1,11.2,215,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,0,0,1,1,5.2,243,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,1,0,1,1,5.5,271,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,0,0,1,0,5.5,219,0,0
+critical,58.0,male,172.0,82.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,0,1,1,5.6,242,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,0,0,0,6.3,164,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,0,1,1,0,8.6,285,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,1,1,0,6.0,272,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,0,0,1,6.3,188,0,0
+critical,78.0,male,170.0,65.0,22.5,non-smoker,,,factory,noise,,abnormal,1,0,1,0,5.1,229,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,1,0,1,6.1,260,0,0
+critical,72.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension,normal,0,0,0,0,5.6,190,0,0
+critical,75.0,male,165.0,70.0,25.7,ex-smoker,40.0,,office,pollution,,abnormal,1,0,1,0,5.0,230,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,1,0,5.4,257,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,0,1,5.4,178,0,0
+critical,72.0,,170.0,78.0,27.0,unknown,,,factory,stress,father: high blood pressure,normal,1,0,0,0,5.8,159,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,1,0,0,0,5.5,191,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,office,chemicals,,abnormal,1,0,0,0,5.6,278,0,0
+critical,72.0,male,160.0,60.0,23.4,ex-smoker,,,factory,noise,,abnormal,1,0,1,0,5.3,309,0,0
+critical,38.0,female,168.0,76.0,26.9,non-smoker,,,office,,,abnormal,1,1,1,0,7.4,233,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,1,1,1,8.0,251,0,0
+moderate,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,1,5.3,198,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,1,1,0,10.3,267,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,0,1,0,1,7.1,240,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,1,0,0,0,5.2,210,0,0
+severe,78.0,female,165.0,70.0,25.7,non-smoker,,,factory,,"father: chronic renal failure, obesity | mother: obesity",abnormal,0,0,0,0,5.3,244,0,0
+critical,76.0,male,165.0,78.0,28.6,ex-smoker,,,office,,father: high blood pressure,abnormal,1,0,1,0,5.2,230,0,0
+critical,75.0,male,165.0,70.0,25.7,ex-smoker,40.0,,office,pollution,,abnormal,1,0,0,0,5.9,267,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,0,0,0,5.4,236,0,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,1,1,1,8.1,210,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,0,0,0,6.0,276,0,0
+critical,38.0,female,168.0,76.0,26.9,non-smoker,,,office,,,abnormal,1,1,1,0,6.3,249,0,0
+mild,78.0,female,152.0,60.0,25.96,non-smoker,,,office,,"father: chronic renal failure | mother: chronic renal failure, diabetes",abnormal,0,1,1,0,8.2,312,0,0
+critical,48.0,female,160.0,65.0,25.4,non-smoker,,,office,noise,,abnormal,1,0,1,0,5.3,248,0,1
+critical,50.0,female,,65.0,25.4,non-smoker,,,factory,noise,,abnormal,0,1,1,1,10.1,263,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,1,0,0,0,4.7,162,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,0,0,1,0,5.7,233,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,0,1,0,5.1,236,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,1,1,0,7.7,255,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,factory,noise,,abnormal,1,0,1,0,5.5,222,0,0
+moderate,58.0,,170.0,75.0,26.0,ex-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.1,217,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,0,1,0,1,9.3,170,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension | mother: diabetes,normal,0,0,1,0,5.3,223,0,0
+critical,60.0,,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,abnormal,0,0,1,0,5.9,301,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,0,1,1,0,7.3,246,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,0,0,1,0,5.6,246,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,0,1,1,5.3,211,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,1,1,5.6,262,0,0
+critical,34.0,male,182.0,90.0,27.2,current smoker,,,factory,shift work,,normal,1,1,0,1,8.8,217,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,1,5.4,249,0,0
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,0,1,1,1,7.3,189,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,1,0,1,0,5.6,187,0,0
+critical,38.0,male,170.0,80.0,27.7,ex-smoker,,,office,stress,"father: heart attack, diabetes",abnormal,1,0,1,0,5.6,169,0,0
+critical,78.0,male,170.0,65.0,22.5,non-smoker,,,factory,noise,,abnormal,1,0,1,0,5.6,266,0,0
+severe,52.0,male,175.0,75.0,24.5,non-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.7,171,0,0
+critical,72.0,male,160.0,60.0,23.4,ex-smoker,,,factory,noise,,abnormal,0,1,1,1,8.0,277,0,0
+moderate,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,0,5.2,236,0,0
+critical,74.0,male,,75.0,25.95,unknown,,,office,stress,"father: chronic renal failure, high blood pressure | mother: chronic renal failure",abnormal,1,0,1,0,5.0,264,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,1,0,1,8.7,297,0,0
+critical,62.0,male,180.0,90.0,27.8,ex-smoker,,,factory,shift work,,abnormal,1,1,1,1,9.3,293,0,0
+moderate,60.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,0,0,1,0,5.5,246,0,0
+critical,38.0,female,168.0,76.0,26.9,non-smoker,,,office,,,abnormal,0,1,0,0,7.9,261,0,1
+moderate,62.0,male,175.0,78.0,25.47,ex-smoker,,,office,stress,father: high blood pressure | mother: diabetes,abnormal,1,1,1,0,8.6,252,0,0
+moderate,45.0,male,178.0,82.0,25.9,non-smoker,,,office,,father: hypertension | mother: thyroid,normal,0,1,0,0,8.5,213,0,0
+critical,62.0,female,160.0,65.0,25.4,non-smoker,,,office,stress,"father: chronic renal failure | mother: died of a stroke, diabetes",abnormal,1,1,1,0,6.4,228,0,0
+critical,72.0,,170.0,78.0,27.0,ex-smoker,,15.0,factory,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.4,178,0,0
+critical,58.0,,175.0,90.0,29.4,ex-smoker,,,office,stress,father: high blood pressure,normal,0,0,0,1,5.3,210,0,0
+critical,62.0,male,180.0,90.0,27.8,ex-smoker,,,factory,shift work,,abnormal,1,1,0,1,9.3,229,0,0
+critical,36.0,female,165.0,60.0,22.0,non-smoker,,,factory,noise,,normal,1,1,0,0,8.7,185,0,0
+moderate,52.0,,175.0,75.0,24.5,non-smoker,,,office,,father: hypertension | mother: diabetes,normal,1,0,0,0,5.4,159,0,0
+critical,58.0,male,168.0,78.0,27.6,non-smoker,,,factory,,father: hypertension,abnormal,1,0,1,0,5.4,162,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,1,0,4.8,235,0,0
+moderate,46.0,,182.0,88.0,26.6,non-smoker,,,office,stress,father: chronic renal failure | parents: hypertension,abnormal,1,0,1,0,6.0,262,0,0
+critical,65.0,female,160.0,70.0,27.3,non-smoker,,,office,,,abnormal,0,0,1,0,5.8,283,0,0
+moderate,58.0,male,178.0,82.0,25.9,ex-smoker,,,office,,father: hypertension | mother: thyroid,abnormal,0,1,0,0,8.6,285,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,office,chemicals,,abnormal,1,1,1,1,7.4,298,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,1,1,1,7.8,213,0,0
+critical,54.0,male,182.0,88.0,,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,1,1,1,8.7,210,0,0
+critical,58.0,,175.0,90.0,29.4,ex-smoker,,,office,stress,father: high blood pressure,normal,0,0,0,0,5.0,220,0,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,1,1,1,8.6,283,0,0
+moderate,,male,178.0,82.0,25.9,non-smoker,,,office,,"father: obesity | mother: thyroid, obesity",abnormal,0,0,0,1,5.6,264,0,0
+critical,38.0,female,165.0,75.0,27.5,non-smoker,,,factory,stress,,abnormal,1,0,0,1,5.8,280,0,1
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,0,0,0,5.4,179,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,0,1,5.0,221,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,0,0,1,0,5.6,244,0,0
+critical,54.0,male,182.0,88.0,,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,1,0,1,1,5.4,192,0,0
+critical,78.0,male,170.0,65.0,22.5,non-smoker,,,factory,noise,,abnormal,1,0,0,1,5.3,237,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,0,1,1,1,8.7,249,0,0
+critical,34.0,male,182.0,90.0,27.2,current smoker,,,factory,shift work,,normal,0,1,0,0,6.7,156,0,0
+critical,72.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: hypertension,normal,0,0,1,0,5.4,192,0,0
+critical,50.0,female,,65.0,25.4,non-smoker,,,factory,noise,,abnormal,1,0,1,0,5.3,208,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,0,0,1,1,5.5,216,0,0
+critical,62.0,,170.0,80.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,0,0,1,0,4.4,238,0,0
+moderate,46.0,,182.0,88.0,26.6,non-smoker,,,office,stress,father: chronic renal failure | parents: hypertension,abnormal,1,0,0,1,5.2,190,0,0
+critical,74.0,male,,75.0,25.95,unknown,,,office,stress,"father: chronic renal failure, high blood pressure | mother: chronic renal failure",abnormal,1,0,1,0,4.8,234,0,0
+critical,50.0,male,175.0,85.0,27.8,non-smoker,,,office,stress,father: heart attack | mother: diabetes,normal,0,0,0,0,4.8,188,0,0
+critical,72.0,,170.0,78.0,27.0,ex-smoker,,15.0,factory,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.6,168,0,0
+critical,54.0,male,175.0,85.0,27.8,non-smoker,,,office,chemicals,,abnormal,1,0,1,0,6.1,269,0,0
+critical,55.0,,175.0,85.0,27.8,ex-smoker,,,office,stress,,abnormal,1,0,1,1,5.3,290,0,0
+severe,58.0,male,,75.0,26.0,ex-smoker,,,office,,father: high blood pressure | mother: diabetes,normal,0,0,0,0,5.0,120,0,0
+critical,54.0,male,178.0,82.0,25.9,non-smoker,,,office,stress,mother: hypertension,abnormal,1,0,1,1,5.7,241,0,0
+critical,62.0,male,180.0,90.0,27.8,ex-smoker,,,factory,shift work,,abnormal,0,1,0,1,8.9,226,0,0
+critical,45.0,male,175.0,85.0,27.8,ex-smoker,,,office,,father: high blood pressure,normal,0,1,0,0,9.5,270,0,0
+critical,75.0,male,,90.0,29.4,ex-smoker,50.0,,,noise,,abnormal,1,1,1,1,8.5,242,0,0
+critical,72.0,male,,78.0,27.6,non-smoker,,,office,,father: diabetes | parents: high blood pressure,abnormal,0,1,0,1,7.3,144,0,0
+critical,,female,165.0,75.0,27.5,non-smoker,,,office,,father: high blood pressure | mother: thyroid,abnormal,0,0,0,0,6.2,226,0,0
+critical,58.0,male,172.0,82.0,27.7,non-smoker,,,office,,father: hypertension | mother: diabetes,abnormal,1,1,1,0,8.2,286,0,0
+critical,58.0,,175.0,90.0,29.4,ex-smoker,,,office,stress,father: high blood pressure,normal,0,0,0,0,5.4,204,0,0

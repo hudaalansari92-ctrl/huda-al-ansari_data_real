@@ -1,0 +1,9 @@
+a 45-Year-Old Male with Acute Coronary Syndrome
+A 45-year-old male presented to the emergency department with acute chest pain and diaphoresis, with a history of smoking and hypertension.
+Initial Evaluation: The patient underwent an ECG, which showed ST-segment elevation indicative of an inferior ST-elevation myocardial infarction (STEMI).
+Blood Tests: Cardiac enzyme tests revealed:
+Troponin I: Elevated at 1.5 ng/mL (normal range <0.04 ng/mL)
+CK-MB: 12 ng/mL (normal range <5 ng/mL)
+Echocardiogram: A transthoracic echocardiogram demonstrated hypokinesis in the inferior wall, consistent with the area supplied by the right coronary artery.
+Coronary Angiography: This confirmed a 90% blockage in the right coronary artery, leading to stenting.
+Management: The patient received dual antiplatelet therapy (aspirin and clopidogrel) and was enrolled in a cardiac rehabilitation program post-discharge.

@@ -1,0 +1,353 @@
+{
+  "dataset": {
+    "total_records": 87,
+    "num_features": 26,
+    "high_risk": 63,
+    "low_risk": 24
+  },
+  "method": "5-Fold Stratified Cross-Validation",
+  "experiments": [
+    {
+      "name": "1. Full System (Baseline)",
+      "name_ar": "النظام الكامل",
+      "accuracy": 79.28,
+      "accuracy_std": 6.04,
+      "f1_score": 87.42,
+      "f1_score_std": 3.29,
+      "precision": 78.69,
+      "precision_std": 4.2,
+      "recall": 98.46,
+      "recall_std": 3.08,
+      "specificity": 28.0,
+      "specificity_std": 20.4,
+      "drop_from_baseline": 0,
+      "fold_details": [
+        {
+          "accuracy": 77.78,
+          "precision": 76.47,
+          "recall": 100.0,
+          "f1_score": 86.67,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 83.33,
+          "precision": 81.25,
+          "recall": 100.0,
+          "f1_score": 89.66,
+          "specificity": 40.0,
+          "balanced_accuracy": 70.0
+        },
+        {
+          "accuracy": 70.59,
+          "precision": 75.0,
+          "recall": 92.31,
+          "f1_score": 82.76,
+          "specificity": 0.0,
+          "balanced_accuracy": 46.15
+        },
+        {
+          "accuracy": 76.47,
+          "precision": 75.0,
+          "recall": 100.0,
+          "f1_score": 85.71,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 88.24,
+          "precision": 85.71,
+          "recall": 100.0,
+          "f1_score": 92.31,
+          "specificity": 60.0,
+          "balanced_accuracy": 80.0
+        }
+      ]
+    },
+    {
+      "name": "2. Without Hazard Features",
+      "name_ar": "بدون المخاطر البيئية",
+      "accuracy": 75.82,
+      "accuracy_std": 5.9,
+      "f1_score": 84.93,
+      "f1_score_std": 3.29,
+      "precision": 77.88,
+      "precision_std": 4.02,
+      "recall": 93.72,
+      "recall_std": 5.79,
+      "specificity": 28.0,
+      "specificity_std": 20.4,
+      "drop_from_baseline": 3.46,
+      "fold_details": [
+        {
+          "accuracy": 77.78,
+          "precision": 76.47,
+          "recall": 100.0,
+          "f1_score": 86.67,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 77.78,
+          "precision": 80.0,
+          "recall": 92.31,
+          "f1_score": 85.71,
+          "specificity": 40.0,
+          "balanced_accuracy": 66.15
+        },
+        {
+          "accuracy": 64.71,
+          "precision": 73.33,
+          "recall": 84.62,
+          "f1_score": 78.57,
+          "specificity": 0.0,
+          "balanced_accuracy": 42.31
+        },
+        {
+          "accuracy": 76.47,
+          "precision": 75.0,
+          "recall": 100.0,
+          "f1_score": 85.71,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 82.35,
+          "precision": 84.62,
+          "recall": 91.67,
+          "f1_score": 88.0,
+          "specificity": 60.0,
+          "balanced_accuracy": 75.83
+        }
+      ]
+    },
+    {
+      "name": "3. Without Smoking Features",
+      "name_ar": "بدون ميزات التدخين",
+      "accuracy": 82.68,
+      "accuracy_std": 5.42,
+      "f1_score": 89.44,
+      "f1_score_std": 2.88,
+      "precision": 81.02,
+      "precision_std": 4.71,
+      "recall": 100.0,
+      "recall_std": 0.0,
+      "specificity": 36.0,
+      "specificity_std": 23.32,
+      "drop_from_baseline": -3.4,
+      "fold_details": [
+        {
+          "accuracy": 88.89,
+          "precision": 86.67,
+          "recall": 100.0,
+          "f1_score": 92.86,
+          "specificity": 60.0,
+          "balanced_accuracy": 80.0
+        },
+        {
+          "accuracy": 83.33,
+          "precision": 81.25,
+          "recall": 100.0,
+          "f1_score": 89.66,
+          "specificity": 40.0,
+          "balanced_accuracy": 70.0
+        },
+        {
+          "accuracy": 76.47,
+          "precision": 76.47,
+          "recall": 100.0,
+          "f1_score": 86.67,
+          "specificity": 0.0,
+          "balanced_accuracy": 50.0
+        },
+        {
+          "accuracy": 76.47,
+          "precision": 75.0,
+          "recall": 100.0,
+          "f1_score": 85.71,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 88.24,
+          "precision": 85.71,
+          "recall": 100.0,
+          "f1_score": 92.31,
+          "specificity": 60.0,
+          "balanced_accuracy": 80.0
+        }
+      ]
+    },
+    {
+      "name": "4. Without BMI/Body Features",
+      "name_ar": "بدون مؤشر الكتلة",
+      "accuracy": 78.1,
+      "accuracy_std": 6.75,
+      "f1_score": 86.08,
+      "f1_score_std": 4.39,
+      "precision": 79.76,
+      "precision_std": 3.83,
+      "recall": 93.85,
+      "recall_std": 7.53,
+      "specificity": 37.0,
+      "specificity_std": 14.0,
+      "drop_from_baseline": 1.18,
+      "fold_details": [
+        {
+          "accuracy": 88.89,
+          "precision": 86.67,
+          "recall": 100.0,
+          "f1_score": 92.86,
+          "specificity": 60.0,
+          "balanced_accuracy": 80.0
+        },
+        {
+          "accuracy": 72.22,
+          "precision": 78.57,
+          "recall": 84.62,
+          "f1_score": 81.48,
+          "specificity": 40.0,
+          "balanced_accuracy": 62.31
+        },
+        {
+          "accuracy": 70.59,
+          "precision": 78.57,
+          "recall": 84.62,
+          "f1_score": 81.48,
+          "specificity": 25.0,
+          "balanced_accuracy": 54.81
+        },
+        {
+          "accuracy": 76.47,
+          "precision": 75.0,
+          "recall": 100.0,
+          "f1_score": 85.71,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 82.35,
+          "precision": 80.0,
+          "recall": 100.0,
+          "f1_score": 88.89,
+          "specificity": 40.0,
+          "balanced_accuracy": 70.0
+        }
+      ]
+    },
+    {
+      "name": "5. Demographics Only",
+      "name_ar": "الديموغرافيا فقط",
+      "accuracy": 76.93,
+      "accuracy_std": 8.47,
+      "f1_score": 85.74,
+      "f1_score_std": 5.08,
+      "precision": 78.02,
+      "precision_std": 4.82,
+      "recall": 95.26,
+      "recall_std": 6.22,
+      "specificity": 28.0,
+      "specificity_std": 20.4,
+      "drop_from_baseline": 2.35,
+      "fold_details": [
+        {
+          "accuracy": 77.78,
+          "precision": 76.47,
+          "recall": 100.0,
+          "f1_score": 86.67,
+          "specificity": 20.0,
+          "balanced_accuracy": 60.0
+        },
+        {
+          "accuracy": 83.33,
+          "precision": 81.25,
+          "recall": 100.0,
+          "f1_score": 89.66,
+          "specificity": 40.0,
+          "balanced_accuracy": 70.0
+        },
+        {
+          "accuracy": 64.71,
+          "precision": 73.33,
+          "recall": 84.62,
+          "f1_score": 78.57,
+          "specificity": 0.0,
+          "balanced_accuracy": 42.31
+        },
+        {
+          "accuracy": 88.24,
+          "precision": 85.71,
+          "recall": 100.0,
+          "f1_score": 92.31,
+          "specificity": 60.0,
+          "balanced_accuracy": 80.0
+        },
+        {
+          "accuracy": 70.59,
+          "precision": 73.33,
+          "recall": 91.67,
+          "f1_score": 81.48,
+          "specificity": 20.0,
+          "balanced_accuracy": 55.83
+        }
+      ]
+    },
+    {
+      "name": "6. Simple IF/ELSE (Traditional)",
+      "name_ar": "قواعد بسيطة (تقليدي)",
+      "accuracy": 38.63,
+      "accuracy_std": 18.46,
+      "f1_score": 41.02,
+      "f1_score_std": 22.54,
+      "precision": 58.95,
+      "precision_std": 19.68,
+      "recall": 32.95,
+      "recall_std": 21.27,
+      "specificity": 54.0,
+      "specificity_std": 19.6,
+      "drop_from_baseline": 40.65,
+      "fold_details": [
+        {
+          "accuracy": 44.44,
+          "precision": 71.43,
+          "recall": 38.46,
+          "f1_score": 50.0,
+          "specificity": 60.0,
+          "balanced_accuracy": 49.23
+        },
+        {
+          "accuracy": 72.22,
+          "precision": 90.0,
+          "recall": 69.23,
+          "f1_score": 78.26,
+          "specificity": 80.0,
+          "balanced_accuracy": 74.62
+        },
+        {
+          "accuracy": 23.53,
+          "precision": 50.0,
+          "recall": 15.38,
+          "f1_score": 23.53,
+          "specificity": 50.0,
+          "balanced_accuracy": 32.69
+        },
+        {
+          "accuracy": 29.41,
+          "precision": 50.0,
+          "recall": 33.33,
+          "f1_score": 40.0,
+          "specificity": 20.0,
+          "balanced_accuracy": 26.67
+        },
+        {
+          "accuracy": 23.53,
+          "precision": 33.33,
+          "recall": 8.33,
+          "f1_score": 13.33,
+          "specificity": 60.0,
+          "balanced_accuracy": 34.17
+        }
+      ]
+    }
+  ]
+}

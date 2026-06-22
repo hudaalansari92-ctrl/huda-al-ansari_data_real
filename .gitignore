@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+.idea/
+sessions/
+auth/users.json
+.streamlit/secrets.toml
+
+# logs
+*.log
+streamlit_run.log
+.claude/

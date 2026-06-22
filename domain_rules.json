@@ -1,0 +1,315 @@
+{
+  "timestamp": "2026-06-22T16:38:16.971850",
+  "model_type": "Data_real Domain Inference Engine",
+  "model_configuration": {
+    "optimal_threshold": 0.17,
+    "total_rules": 31,
+    "binary_features": 21,
+    "continuous_features": 5
+  },
+  "performance": {
+    "train": {
+      "accuracy": 0.6822916666666666,
+      "balanced_accuracy": 0.716370299986426,
+      "f1_score": 0.7447698744769874,
+      "auc_roc": 0.7682231573231981
+    },
+    "validation": {
+      "accuracy": 0.7291666666666666,
+      "balanced_accuracy": 0.7417582417582418,
+      "f1_score": 0.7936507936507936,
+      "auc_roc": 0.7890109890109891
+    },
+    "test": {
+      "accuracy": 0.55,
+      "balanced_accuracy": 0.5437756497948016,
+      "f1_score": 0.64,
+      "auc_roc": 0.560875512995896,
+      "matthews_corrcoef": 0.07908011290078078,
+      "precision": 0.75,
+      "recall": 0.5581395348837209,
+      "specificity": 0.5294117647058824
+    }
+  },
+  "rules": [
+    {
+      "rule_id": "R1",
+      "condition": "age_young=1",
+      "feature_name": "age_young",
+      "feature_type": "binary",
+      "confidence": 0.8,
+      "lift": 1.1050359712230216,
+      "weight": 0.018666301579965
+    },
+    {
+      "rule_id": "R2",
+      "condition": "age_senior=1",
+      "feature_name": "age_senior",
+      "feature_type": "binary",
+      "confidence": 0.8275862068965517,
+      "lift": 1.1431406598858844,
+      "weight": 0.033564909893245114
+    },
+    {
+      "rule_id": "R3",
+      "condition": "age_elderly=1",
+      "feature_name": "age_elderly",
+      "feature_type": "binary",
+      "confidence": 0.8571428571428571,
+      "lift": 1.1839671120246658,
+      "weight": 0.019487569586999768
+    },
+    {
+      "rule_id": "R4",
+      "condition": "bmi_obese=1",
+      "feature_name": "bmi_obese",
+      "feature_type": "binary",
+      "confidence": 0.9230769230769231,
+      "lift": 1.2750415052573325,
+      "weight": 0.015717859240547177
+    },
+    {
+      "rule_id": "R5",
+      "condition": "is_female=1",
+      "feature_name": "is_female",
+      "feature_type": "binary",
+      "confidence": 0.9714285714285714,
+      "lift": 1.3418293936279546,
+      "weight": 0.03627254892652109
+    },
+    {
+      "rule_id": "R6",
+      "condition": "smoker_never=1",
+      "feature_name": "smoker_never",
+      "feature_type": "binary",
+      "confidence": 0.8172043010752689,
+      "lift": 1.1288001856579253,
+      "weight": 0.04264596375766308
+    },
+    {
+      "rule_id": "R7",
+      "condition": "work_factory=1",
+      "feature_name": "work_factory",
+      "feature_type": "binary",
+      "confidence": 0.8043478260869565,
+      "lift": 1.1110416015014075,
+      "weight": 0.027354020035440203
+    },
+    {
+      "rule_id": "R8",
+      "condition": "hazard_noise=1",
+      "feature_name": "hazard_noise",
+      "feature_type": "binary",
+      "confidence": 0.92,
+      "lift": 1.2707913669064748,
+      "weight": 0.02783612246317961
+    },
+    {
+      "rule_id": "R9",
+      "condition": "hazard_chemicals=1",
+      "feature_name": "hazard_chemicals",
+      "feature_type": "binary",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.011589243387844577
+    },
+    {
+      "rule_id": "R13",
+      "condition": "has_family_history=1 AND is_female=1",
+      "feature_name": "has_family_history+is_female",
+      "feature_type": "composite",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.02092662566021281
+    },
+    {
+      "rule_id": "R14",
+      "condition": "has_family_history=1 AND age_senior=1",
+      "feature_name": "has_family_history+age_senior",
+      "feature_type": "composite",
+      "confidence": 0.8181818181818182,
+      "lift": 1.1301504251144538,
+      "weight": 0.03046734650630857
+    },
+    {
+      "rule_id": "R15",
+      "condition": "age_middle=1 AND is_female=1",
+      "feature_name": "age_middle+is_female",
+      "feature_type": "composite",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.02295812495299391
+    },
+    {
+      "rule_id": "R16",
+      "condition": "age_middle=1 AND hazard_noise=1",
+      "feature_name": "age_middle+hazard_noise",
+      "feature_type": "composite",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.024873683931793962
+    },
+    {
+      "rule_id": "R17",
+      "condition": "is_female=1 AND smoker_never=1",
+      "feature_name": "is_female+smoker_never",
+      "feature_type": "composite",
+      "confidence": 0.9696969696969697,
+      "lift": 1.3394375408763897,
+      "weight": 0.03621897038759494
+    },
+    {
+      "rule_id": "R18",
+      "condition": "is_female=1 AND age_senior=1",
+      "feature_name": "is_female+age_senior",
+      "feature_type": "composite",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.02092662566021281
+    },
+    {
+      "rule_id": "R19",
+      "condition": "is_female=1 AND hazard_noise=1",
+      "feature_name": "is_female+hazard_noise",
+      "feature_type": "composite",
+      "confidence": 0.9090909090909091,
+      "lift": 1.2557226945716153,
+      "weight": 0.021947429922290762
+    },
+    {
+      "rule_id": "R20",
+      "condition": "is_female=1 AND work_office=1",
+      "feature_name": "is_female+work_office",
+      "feature_type": "composite",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.026933022803920202
+    },
+    {
+      "rule_id": "R21",
+      "condition": "smoker_never=1 AND age_senior=1",
+      "feature_name": "smoker_never+age_senior",
+      "feature_type": "composite",
+      "confidence": 1.0,
+      "lift": 1.3812949640287768,
+      "weight": 0.023143395615537084
+    },
+    {
+      "rule_id": "R22",
+      "condition": "smoker_never=1 AND hazard_noise=1",
+      "feature_name": "smoker_never+hazard_noise",
+      "feature_type": "composite",
+      "confidence": 0.9375,
+      "lift": 1.2949640287769784,
+      "weight": 0.02613079719997426
+    },
+    {
+      "rule_id": "R23",
+      "condition": "age_senior=1 AND work_office=1",
+      "feature_name": "age_senior+work_office",
+      "feature_type": "composite",
+      "confidence": 0.8604651162790697,
+      "lift": 1.188556131838715,
+      "weight": 0.033246130140603854
+    },
+    {
+      "rule_id": "R24",
+      "condition": "hazard_noise=1 AND work_office=1",
+      "feature_name": "hazard_noise+work_office",
+      "feature_type": "composite",
+      "confidence": 0.8571428571428571,
+      "lift": 1.1839671120246658,
+      "weight": 0.014859339658634329
+    },
+    {
+      "rule_id": "R25",
+      "condition": "age_middle=0",
+      "feature_name": "age_middle",
+      "feature_type": "not",
+      "confidence": 0.8269230769230769,
+      "lift": 1.142224681793027,
+      "weight": 0.042942885531279985
+    },
+    {
+      "rule_id": "R26",
+      "condition": "bmi_overweight=0",
+      "feature_name": "bmi_overweight",
+      "feature_type": "not",
+      "confidence": 0.8125,
+      "lift": 1.1223021582733812,
+      "weight": 0.018706957509628707
+    },
+    {
+      "rule_id": "R27",
+      "condition": "has_family_history=0",
+      "feature_name": "has_family_history",
+      "feature_type": "not",
+      "confidence": 0.8666666666666667,
+      "lift": 1.1971223021582733,
+      "weight": 0.03524226470950402
+    },
+    {
+      "rule_id": "R28",
+      "condition": "work_office=0",
+      "feature_name": "work_office",
+      "feature_type": "not",
+      "confidence": 0.8235294117647058,
+      "lift": 1.1375370292001692,
+      "weight": 0.029183763771772255
+    },
+    {
+      "rule_id": "R29",
+      "condition": "is_female=1 OR smoker_never=1",
+      "feature_name": "is_female|smoker_never",
+      "feature_type": "or",
+      "confidence": 0.8210526315789474,
+      "lift": 1.1341158652025747,
+      "weight": 0.042723859671837415
+    },
+    {
+      "rule_id": "R30",
+      "condition": "is_female=1 OR age_senior=1",
+      "feature_name": "is_female|age_senior",
+      "feature_type": "or",
+      "confidence": 0.8690476190476191,
+      "lift": 1.2004110996916753,
+      "weight": 0.04459907814456577
+    },
+    {
+      "rule_id": "R31",
+      "condition": "is_female=1 OR hazard_noise=1",
+      "feature_name": "is_female|hazard_noise",
+      "feature_type": "or",
+      "confidence": 0.9591836734693877,
+      "lift": 1.324915577741888,
+      "weight": 0.040251424926117614
+    },
+    {
+      "rule_id": "R32",
+      "condition": "is_female=1 OR hazard_shift_work=1",
+      "feature_name": "is_female|hazard_shift_work",
+      "feature_type": "or",
+      "confidence": 0.8085106382978723,
+      "lift": 1.1167916730445429,
+      "weight": 0.03362210680581314
+    },
+    {
+      "rule_id": "R33",
+      "condition": "smoker_never=1 OR hazard_noise=1",
+      "feature_name": "smoker_never|hazard_noise",
+      "feature_type": "or",
+      "confidence": 0.8235294117647058,
+      "lift": 1.1375370292001692,
+      "weight": 0.04383505612129306
+    },
+    {
+      "rule_id": "R34",
+      "condition": "age_senior=1 OR hazard_noise=1",
+      "feature_name": "age_senior|hazard_noise",
+      "feature_type": "or",
+      "confidence": 0.8641975308641975,
+      "lift": 1.1937116973088195,
+      "weight": 0.04352085948920792
+    }
+  ]
+}

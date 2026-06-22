@@ -1,0 +1,10 @@
+a 67-Year-Old Woman with Atypical Symptoms
+A 67-year-old woman with a history of hypertension and hyperlipidemia presented with atypical chest pain and fatigue.
+Initial Evaluation: The ECG showed nonspecific ST-segment changes, which raised suspicion for CAD.
+Blood Tests: Laboratory results indicated:
+Total cholesterol: 210 mg/dL
+LDL-cholesterol: 130 mg/dL
+Troponin: 0.03 ng/mL (within normal limits)
+Echocardiogram: The echocardiogram revealed normal left ventricular function but showed mild left ventricular hypertrophy, suggesting long-standing hypertension.
+Further Testing: Due to the inconclusive ECG and normal troponin levels, a stress echocardiogram was performed. It demonstrated wall motion abnormalities during exercise, confirming the presence of significant CAD.
+Management: The patient was started on a statin and advised on lifestyle modifications, including dietary changes and increased physical activity.
