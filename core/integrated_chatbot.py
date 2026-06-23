@@ -597,6 +597,10 @@ class IntegratedSelfReasoningChatbot:
         # بناء تقييم بالشكل المتوقع من باقي النظام (insights + triggered_rules)
         binary = {k: v for k, v in feats.items() if k not in _CONTINUOUS_FEATS}
         continuous = {k: feats[k] for k in _CONTINUOUS_FEATS if k in feats}
+        # مستوى الخطر برمز موحّد (LOW/MEDIUM/HIGH) + الاسم العربي — مطلوبان
+        # من عرض "القسم الأول" وإلا يظهر "غير معروف".
+        _risk_up = {'Low': 'LOW', 'Medium': 'MEDIUM', 'High': 'HIGH'}.get(risk_level, 'LOW')
+        _risk_ar = {'LOW': 'منخفض', 'MEDIUM': 'متوسط', 'HIGH': 'عالي'}[_risk_up]
         result = {
             'status': 'complete',
             'derived_features': feats,
@@ -606,7 +610,8 @@ class IntegratedSelfReasoningChatbot:
             'ml': pipe['ml'],
             'pipeline': pipe,
             'insights': {
-                'risk_level': risk_level,
+                'risk_level': _risk_up,
+                'risk_level_ar': _risk_ar,
                 'triggered_rules_count': len(triggered),
                 'top_rules': triggered[:5],
                 'risk_factors_ar': self._clinical_risk_factors(feats, 'ar'),
