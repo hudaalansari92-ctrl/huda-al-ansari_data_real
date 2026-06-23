@@ -351,6 +351,7 @@ def display_progress_bar(facts_count: int, total_facts: int = len(ASKED_FIELDS))
     """عرض شريط التقدم"""
     lang = get_lang()
     progress = (facts_count / total_facts) if total_facts else 0
+    progress = max(0.0, min(1.0, progress))  # st.progress يقبل [0,1] فقط
     st.progress(progress)
     pct = f"{progress*100:.1f}"
     st.caption(t('progress_text', lang).format(done=facts_count, total=total_facts, pct=pct))
@@ -1683,7 +1684,8 @@ def render_main_area():
 
     # ═══ الجلسة = التقييم الحواري الذكي — نفس واجهة main01 ═══
     # عرض التقدم
-    facts_count = len(st.session_state.chatbot.facts) if st.session_state.chatbot else 0
+    facts_count = (len([f for f in ASKED_FIELDS if f in st.session_state.chatbot.facts])
+                   if st.session_state.chatbot else 0)
     display_progress_bar(facts_count)
 
     # ═══ Instant trend alerts (queued after last answer) ═══
@@ -1784,9 +1786,11 @@ def render_main_area():
                 remaining_fields = {k: v for k, v in available_fields.items()
                                   if k not in st.session_state.chatbot.answered_fields}
 
-            answered_count = len(st.session_state.chatbot.answered_fields) if st.session_state.chatbot else 0
+            answered_count = (len([f for f in available_fields if f in st.session_state.chatbot.answered_fields])
+                              if st.session_state.chatbot else 0)
             total = len(available_fields)
             pct = int((answered_count / total) * 100) if total > 0 else 0
+            pct = max(0, min(100, pct))  # st.progress يقبل [0,1] فقط
             st.progress(pct / 100, text=t('progress_text', lang).format(done=answered_count, total=total, pct=pct))
 
             if remaining_fields:
