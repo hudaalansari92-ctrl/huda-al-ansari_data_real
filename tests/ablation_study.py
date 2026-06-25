@@ -1,13 +1,13 @@
 """
-Ablation Study — دراسة إزالة المكونات (Clinical schema)
+Ablation Study — دراسة إزالة المكونات (Clinical schema — الـ dataset الجديد)
 
-The project migrated from an 11-field cardiac schema to an 8-field clinical
-base schema. Inputs are now derived into the 26 engineered domain features
-(engine.feature_deriver.FEATURE_NAMES) and scored by a sklearn model.
+يستخدم الآن البيانات السريرية الجديدة (data/Data_real_train.csv) والميزات الـ 18
+التي يستهلكها النموذج السريري (engine.clinical_model.heart_model.FEATURES):
+14 رقمية/سريرية + gender_encoded + smoking_encoded + workplace_encoded
++ has_family_history. الوسم = ThalassemiaStatus (abnormal = خطر مرتفع).
 
-This ablation removes one feature group per experiment to measure each
-group's contribution, using 5-fold stratified cross-validation on the
-labelled domain feature dataset (data/domain_features.csv, label = high_risk).
+كل تجربة تزيل مجموعة ميزات واحدة لقياس مساهمتها، باستخدام التحقّق المتقاطع
+الطبقي 5-Fold.
 
 Usage:
     python tests/ablation_study.py
@@ -27,79 +27,33 @@ import pandas as pd
 # إضافة مسار المشروع
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from engine.feature_deriver import FEATURE_NAMES, derive  # noqa: E402
+from engine.clinical_model import heart_model  # noqa: E402
 
 logging.basicConfig(level=logging.WARNING)
 warnings.filterwarnings('ignore')
 
 LABEL_COL = 'high_risk'
+DATA_FILE = 'Data_real_train.csv'
+
+# الميزات الـ 18 التي يستهلكها النموذج السريري الجديد
+FEATURE_NAMES: List[str] = list(heart_model.FEATURES)
 
 
 # ═══════════════════════════════════════════════════════
-#  تحميل البيانات (26 derived features + label)
+#  تحميل البيانات الجديدة (18 ميزة سريرية + الوسم)
 # ═══════════════════════════════════════════════════════
 
-def load_domain_data() -> pd.DataFrame:
-    """تحميل بيانات الميزات المشتقّة (26 feature + high_risk)."""
-    local_path = Path(__file__).parent.parent / 'data' / 'domain_features.csv'
-    if local_path.exists():
-        print(f"[+] Loading derived features from {local_path}")
-        return pd.read_csv(local_path)
+def load_clinical_data() -> pd.DataFrame:
+    """تحميل الـ dataset الجديد وبناء الـ 18 ميزة عبر heart_model._frame."""
+    path = Path(__file__).parent.parent / 'data' / DATA_FILE
+    print(f"[+] Loading NEW clinical dataset from {path}")
+    raw = pd.read_csv(path)
 
-    print("[!] domain_features.csv not found. Generating synthetic dataset...")
-    return generate_synthetic_data()
-
-
-def generate_synthetic_data(n_high=63, n_low=24) -> pd.DataFrame:
-    """
-    توليد بيانات اصطناعية: 8 حقول أساسية -> derive() -> 26 ميزة + label.
-    Mirrors the clinical base schema, not the old cardiac one.
-    """
-    rng = np.random.default_rng(42)
-    rows = []
-
-    def make(label):
-        if label == 1:  # high risk
-            base = {
-                'age': int(rng.integers(58, 82)),
-                'gender': rng.choice(['male', 'female'], p=[0.7, 0.3]),
-                'height_cm': float(rng.integers(160, 185)),
-                'weight_kg': float(rng.integers(85, 115)),
-                'smoking_status': rng.choice(
-                    ['current smoker', 'ex-smoker', 'non-smoker'],
-                    p=[0.6, 0.25, 0.15]),
-                'workplace_type': rng.choice(['factory', 'office'], p=[0.65, 0.35]),
-                'environmental_hazards': list(rng.choice(
-                    ['stress', 'pollution', 'noise', 'dust', 'chemicals', 'shift work'],
-                    size=int(rng.integers(2, 5)), replace=False)),
-                'family_history': rng.choice(['yes', 'no'], p=[0.6, 0.4]),
-            }
-        else:  # low risk
-            base = {
-                'age': int(rng.integers(22, 50)),
-                'gender': rng.choice(['male', 'female'], p=[0.5, 0.5]),
-                'height_cm': float(rng.integers(160, 185)),
-                'weight_kg': float(rng.integers(55, 80)),
-                'smoking_status': rng.choice(
-                    ['current smoker', 'ex-smoker', 'non-smoker'],
-                    p=[0.1, 0.2, 0.7]),
-                'workplace_type': rng.choice(['factory', 'office'], p=[0.3, 0.7]),
-                'environmental_hazards': list(rng.choice(
-                    ['stress', 'pollution', 'noise', 'dust', 'chemicals', 'shift work'],
-                    size=int(rng.integers(0, 2)), replace=False)),
-                'family_history': rng.choice(['yes', 'no'], p=[0.2, 0.8]),
-            }
-        feats = derive(base)
-        feats[LABEL_COL] = label
-        return feats
-
-    for _ in range(n_high):
-        rows.append(make(1))
-    for _ in range(n_low):
-        rows.append(make(0))
-
-    df = pd.DataFrame(rows)
-    return df.sample(frac=1, random_state=42).reset_index(drop=True)
+    # نفس هندسة الميزات التي يستخدمها النموذج (14 رقمية + 4 مُرمّزة)
+    X = heart_model._frame(raw).copy()
+    # الوسم: abnormal -> 1 (خطر مرتفع) ، normal -> 0
+    X[LABEL_COL] = (raw['ThalassemiaStatus'].astype(str).str.lower() == 'abnormal').astype(int).values
+    return X
 
 
 # ═══════════════════════════════════════════════════════
@@ -170,13 +124,15 @@ def calculate_metrics_cv(df: pd.DataFrame, feature_cols: List[str],
 
 
 # ═══════════════════════════════════════════════════════
-#  مجموعات الميزات (لإزالتها في التجارب)
+#  مجموعات الميزات الجديدة (لإزالتها في التجارب)
 # ═══════════════════════════════════════════════════════
 
-HAZARD_COLS = [c for c in FEATURE_NAMES if c.startswith('hazard_')]
-SMOKING_COLS = [c for c in FEATURE_NAMES if c.startswith('smoker_')]
-BMI_COLS = [c for c in FEATURE_NAMES if c.startswith('bmi') or c == 'weight_kg' or c == 'height_cm']
-DEMOGRAPHIC_COLS = ['age', 'age_risk_score', 'is_male', 'is_female', 'bmi']
+CONDITION_COLS = ['hypertension', 'diabetes', 'cardiovascular_disease',
+                  'chronic_diseases', 'obesity', 'gestational_diabetes']
+LAB_COLS = ['hba1c', 'cholesterol']
+SMOKING_COLS = ['smoking_encoded', 'years_smoked', 'years_since_quit']
+BODY_COLS = ['bmi', 'height_cm', 'weight_kg']
+DEMO_COLS = ['age', 'gender_encoded']
 
 
 def _without(cols):
@@ -188,34 +144,38 @@ def _without(cols):
 # ═══════════════════════════════════════════════════════
 
 def experiment_full_system(df, n_folds=5) -> Dict:
-    """تجربة 1: النظام الكامل — كل الـ26 ميزة مشتقّة (Baseline)."""
+    """تجربة 1: النظام الكامل — كل الـ 18 ميزة (Baseline)."""
     return calculate_metrics_cv(df, list(FEATURE_NAMES), n_folds)
 
 
-def experiment_no_hazards(df, n_folds=5) -> Dict:
-    """تجربة 2: بدون ميزات المخاطر البيئية (hazard_*)."""
-    return calculate_metrics_cv(df, _without(HAZARD_COLS), n_folds)
+def experiment_no_conditions(df, n_folds=5) -> Dict:
+    """تجربة 2: بدون الأمراض (ضغط/سكري/قلب/مزمنة/سمنة/سكري حمل)."""
+    return calculate_metrics_cv(df, _without(CONDITION_COLS), n_folds)
+
+
+def experiment_no_labs(df, n_folds=5) -> Dict:
+    """تجربة 3: بدون التحاليل (HbA1c + الكوليسترول)."""
+    return calculate_metrics_cv(df, _without(LAB_COLS), n_folds)
 
 
 def experiment_no_smoking(df, n_folds=5) -> Dict:
-    """تجربة 3: بدون ميزات التدخين (smoker_*)."""
+    """تجربة 4: بدون ميزات التدخين."""
     return calculate_metrics_cv(df, _without(SMOKING_COLS), n_folds)
 
 
-def experiment_no_bmi(df, n_folds=5) -> Dict:
-    """تجربة 4: بدون ميزات الـ BMI / القياسات الجسدية."""
-    return calculate_metrics_cv(df, _without(BMI_COLS), n_folds)
+def experiment_no_body(df, n_folds=5) -> Dict:
+    """تجربة 5: بدون القياسات الجسدية (BMI/الطول/الوزن)."""
+    return calculate_metrics_cv(df, _without(BODY_COLS), n_folds)
 
 
 def experiment_demographics_only(df, n_folds=5) -> Dict:
-    """تجربة 5: الخصائص الديموغرافية فقط (العمر، الجنس، BMI)."""
-    return calculate_metrics_cv(df, DEMOGRAPHIC_COLS, n_folds)
+    """تجربة 6: الخصائص الديموغرافية فقط (العمر + الجنس)."""
+    return calculate_metrics_cv(df, DEMO_COLS, n_folds)
 
 
 def experiment_simple_rules(df, n_folds=5) -> Dict:
     """
-    تجربة 6: قواعد IF/ELSE بسيطة (Chatbot العادي) — بدون ML.
-    Score مبني على الميزات المشتقّة الأساسية.
+    تجربة 7: قواعد IF/ELSE بسيطة (بدون ML) على الميزات السريرية الخام.
     """
     from sklearn.model_selection import StratifiedKFold
 
@@ -228,13 +188,21 @@ def experiment_simple_rules(df, n_folds=5) -> Dict:
             score = 0
             if row.get('age', 0) >= 55:
                 score += 1
-            if row.get('bmi_obese', 0) == 1 or row.get('bmi_overweight', 0) == 1:
+            if row.get('obesity', 0) == 1 or row.get('bmi', 0) >= 30:
                 score += 1
-            if row.get('smoker_current', 0) == 1:
+            if row.get('smoking_encoded', 0) == 2:  # مدخّن حالي
                 score += 1
             if row.get('has_family_history', 0) == 1:
                 score += 1
-            if sum(row.get(h, 0) for h in HAZARD_COLS) >= 2:
+            if row.get('hypertension', 0) == 1:
+                score += 1
+            if row.get('diabetes', 0) == 1:
+                score += 1
+            if row.get('cardiovascular_disease', 0) == 1:
+                score += 1
+            if row.get('cholesterol', 0) >= 240:
+                score += 1
+            if row.get('hba1c', 0) >= 6.5:
                 score += 1
             preds.append(1 if score >= 3 else 0)
         return np.array(preds)
@@ -263,11 +231,11 @@ def run_ablation_study():
 
     print("=" * 70)
     print("  Ablation Study — دراسة إزالة المكونات")
-    print("  Clinical Risk Assessment System (8-field base -> 26 features)")
+    print("  Clinical Risk Assessment System (NEW dataset, 18 clinical features)")
     print("  Method: 5-Fold Stratified Cross-Validation")
     print("=" * 70)
 
-    df = load_domain_data()
+    df = load_clinical_data()
 
     if LABEL_COL not in df.columns:
         print(f"[!] ERROR: No '{LABEL_COL}' label column found!")
@@ -279,18 +247,19 @@ def run_ablation_study():
             df[col] = 0
 
     y_true = df[LABEL_COL].values
-    print(f"\n[+] Dataset: {len(df)} records, {len(FEATURE_NAMES)} derived features")
+    print(f"\n[+] Dataset: {len(df)} records, {len(FEATURE_NAMES)} clinical features")
     print(f"    High risk: {int(sum(y_true))} ({sum(y_true)/len(y_true)*100:.1f}%)")
     print(f"    Low risk:  {len(y_true) - int(sum(y_true))} "
           f"({(len(y_true)-sum(y_true))/len(y_true)*100:.1f}%)")
 
     experiments = [
         ("1. Full System (Baseline)", "النظام الكامل", experiment_full_system),
-        ("2. Without Hazard Features", "بدون المخاطر البيئية", experiment_no_hazards),
-        ("3. Without Smoking Features", "بدون ميزات التدخين", experiment_no_smoking),
-        ("4. Without BMI/Body Features", "بدون مؤشر الكتلة", experiment_no_bmi),
-        ("5. Demographics Only", "الديموغرافيا فقط", experiment_demographics_only),
-        ("6. Simple IF/ELSE (Traditional)", "قواعد بسيطة (تقليدي)", experiment_simple_rules),
+        ("2. Without Disease Features", "بدون الأمراض", experiment_no_conditions),
+        ("3. Without Lab Features", "بدون التحاليل", experiment_no_labs),
+        ("4. Without Smoking Features", "بدون ميزات التدخين", experiment_no_smoking),
+        ("5. Without Body/BMI Features", "بدون القياسات الجسدية", experiment_no_body),
+        ("6. Demographics Only", "الديموغرافيا فقط", experiment_demographics_only),
+        ("7. Simple IF/ELSE (Traditional)", "قواعد بسيطة (تقليدي)", experiment_simple_rules),
     ]
 
     results = []
@@ -353,6 +322,7 @@ def run_ablation_study():
     # ═══════ حفظ النتائج ═══════
     output = {
         'dataset': {
+            'source': DATA_FILE,
             'total_records': len(df),
             'num_features': len(FEATURE_NAMES),
             'high_risk': int(sum(y_true)),
